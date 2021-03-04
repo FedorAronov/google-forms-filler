@@ -2,6 +2,7 @@
 Scriptable GoogleForms filling tool. All question types and pages are supported.
 
 ## Installation
+Python 3.8+ is required.
 ```console
 git clone https://github.com/Fedya2009/google-forms-filler
 cd .\google-forms-filler\
