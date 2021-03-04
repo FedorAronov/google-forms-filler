@@ -1,6 +1,13 @@
 # GoogleFormsFiller
 Scriptable GoogleForms filling tool.
 
+## Installation
+```console
+git clone https://github.com/Fedya2009/google-forms-filler
+cd .\google-forms-filler\
+pip install -r .\requirements.txt
+```
+
 ## Usage
 ```console
 ~> python -m gff -h
@@ -30,7 +37,8 @@ optional arguments:
 ## Examples
 ### Form info
 Consider such form:
-![Example form](https://i.imgur.com/zgs4Qn6.png)
+
+![](https://i.imgur.com/zgs4Qn6.png)
 
 Output:
 ```console
@@ -54,9 +62,9 @@ Questions count: 1
 * Description: None
 * Is required: True
 * Choices:
-> 1
-> 2
-> 3
+ > 1
+ > 2
+ > 3
 *
 ********************
 ```
@@ -66,22 +74,23 @@ Questions count: 1
 Form submission URL: https://docs.google.com/forms/d/e/1FAIpQLSeGc67eOIK51V2idSaF-wWIUWTqavNj93uzJCI70PaTXnhy1w/formResponse
 Selected answers mode: fully random answers.
 Press enter to start form submission...
-> 1 submissions done.
-> 2 submissions done.
-> 3 submissions done.
+ > 1 submissions done.
+ > 2 submissions done.
+ > 3 submissions done.
 ...
-> 30 submissions done.
+ > 30 submissions done.
 Finished.
 ```
 Result:
+
 ![Responses](https://i.imgur.com/5pEdDot.png)
 ### Custom answers script
 ```console
-~>python -m gff https://forms.gle/TH6djhpxYLVuJaVR9 -cs
+~> python -m gff https://forms.gle/TH6djhpxYLVuJaVR9 -cs
 Form submission URL: https://docs.google.com/forms/d/e/1FAIpQLSeGc67eOIK51V2idSaF-wWIUWTqavNj93uzJCI70PaTXnhy1w/formResponse
 Template script was saved to 1FAIpQLSeGc67eOIK51V2idSaF-wWIUWTqavNj93uzJCI70PaTXnhy1w.py
 ```
-Result ==(1FAIpQLSeGc67eOIK51V2idSaF-wWIUWTqavNj93uzJCI70PaTXnhy1w.py)==:
+Result script:
 ```python
 from gff.answers import *
 from gff.form import GoogleForm
@@ -135,4 +144,4 @@ class FormAnswerSupplier:
 		return question.default_random_answer
 
 ```
-For each question, answer of the corresponding type must be returned, or _AnswerEmpty_, if this question is not required.
+For each question, answer of the corresponding type must be returned, or `AnswerEmpty` if this question is not required.
