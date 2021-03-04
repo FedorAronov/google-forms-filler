@@ -1,5 +1,5 @@
 # GoogleFormsFiller
-Scriptable GoogleForms filling tool.
+Scriptable GoogleForms filling tool. All question types and pages are supported.
 
 ## Installation
 ```console
