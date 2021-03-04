@@ -74,7 +74,8 @@ if __name__ == "__main__":
         print("Selected answers mode: user script.")
         with open(f"{form.identifier}.py", "r", encoding="UTF-8") as file:
             exec(file.read(), globals())
-        answer_provider = FormAnswerProvider(form)
+        # noinspection PyUnresolvedReferences
+        answer_provider = FormAnswerSupplier(form)
         input("Press enter to start form submission...")
         iteration = 0
         context = answer_provider.get_iteration_context(iteration)
@@ -96,7 +97,7 @@ if __name__ == "__main__":
                              locals())
             response = submit_google_form(form, answers, email=email)
             if response.status_code == 200:
-                print(f"> {iteration} submissions done.")
+                print(f"> {iteration + 1} submissions done.")
             else:
                 print(f"Response code {response.status_code} received, stopping.")
                 break
